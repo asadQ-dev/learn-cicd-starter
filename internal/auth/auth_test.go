@@ -38,7 +38,7 @@ func TestGetAPIKey(t *testing.T) {
 		},
 		{
 			name:    "prefix without key",
-			header:  http.Header{"Authorization": []string{"ApiKey "}},
+			header:  http.Header{"Authorization": []string{"ApiKey"}},
 			wantKey: "",
 			wantErr: true,
 		},
