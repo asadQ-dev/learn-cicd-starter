@@ -36,6 +36,12 @@ func TestGetAPIKey(t *testing.T) {
 			wantKey: "",
 			wantErr: true,
 		},
+		{
+			name:    "prefix without key",
+			header:  http.Header{"Authorization": []string{"ApiKey "}},
+			wantKey: "",
+			wantErr: true,
+		},
 	}
 	for _, testCase := range tests {
 		t.Run(testCase.name, func(t *testing.T) {
